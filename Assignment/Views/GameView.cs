@@ -25,11 +25,13 @@ namespace Assignment.Views
                 case GameStatus.PLAYER_TURN:
                     Console.Clear();
                     _showPlayerHand();
+                    _showTotalSumText(model.GetPlayerSum());
                     _showHitOrHoldText();
                     break;
                 case GameStatus.HIT:
                     Console.Clear();
                     _showPlayerHand();
+                    _showTotalSumText(model.GetPlayerSum());
                     break;
                 case GameStatus.PLAYER_BUST:
                     Console.Clear();
@@ -51,12 +53,19 @@ namespace Assignment.Views
                     break;
                 case GameStatus.END:
                     _showDealersHand();
+                    _showTotalSumText(model.GetDealerSum());
                     _showPlayerHand();
+                    _showTotalSumText(model.GetPlayerSum());
                     _showRestartText();
                     break;
                 case GameStatus.EXIT:
                     break;
             }
+        }
+
+        private void _showTotalSumText(int sum)
+        {
+            ConsoleWritter.Write($"Total: {sum}", ConsoleColor.Blue);
         }
 
         private void _showRestartText()
