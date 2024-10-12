@@ -8,7 +8,7 @@ namespace Assignment.Controllers
 {
     public class GameController : ModeController
     {
-        private int  CARD_VALUE_LIMIT = 21;
+        private const int  CARD_VALUE_LIMIT = 21;
         public GameController(GameModel model, GameView view) : base(model, view)
         {
             var cardExtractor = new CardExtractor();
@@ -18,7 +18,7 @@ namespace Assignment.Controllers
 
         private void _handleChangeStatus(object? sender, GameStatusChangedEventArgs args) { 
             var model = (GameModel)_model;
-            switch(args.Status)
+            switch (args.Status)
             {
                 case GameStatus.START:
                     _prepareHands();
