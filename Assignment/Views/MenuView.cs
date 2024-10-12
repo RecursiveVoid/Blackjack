@@ -13,7 +13,7 @@ namespace Assignment.Views
         {
             _printLogo();
             ConsoleWritter.WriteInGreen("PRESS 1 TO START NEW GAME");
-            ConsoleWritter.WriteInRed("PRESS 1 TO START NEW GAME");
+            ConsoleWritter.WriteInRed("Press any other key to Exit");
         }
 
 
