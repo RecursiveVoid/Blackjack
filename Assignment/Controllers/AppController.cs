@@ -28,7 +28,6 @@ namespace Assignment.Controllers
 
         private void _handleChangeModeType(object sender, ModeTypeChangedEventArgs args)
         {
-            Console.WriteLine($"Mode Type Changed: {args.type}"); // Debug log
             var currentMode = _model.CurrentMode;
             currentMode.Controller.Stop();
             currentMode = _model.GetModeByType(args.type);
@@ -45,7 +44,6 @@ namespace Assignment.Controllers
 
         private void _handleChangeMenuStatus(object sender, MenuStatusChangedEventArgs args)
         {
-            Console.WriteLine($"menu status changed to: {args.status}"); // Debug log
             switch (args.status)
             {
                 case MenuStatus.NEW_GAME:
