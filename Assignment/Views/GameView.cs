@@ -33,21 +33,21 @@ namespace Assignment.Views
                     break;
                 case GameStatus.PLAYER_BUST:
                     Console.Clear();
-                    ConsoleWritter.WriteInRed("You BUST!");
+                    ConsoleWritter.Write("You BUST!", ConsoleColor.Red);
                     break;
                 case GameStatus.DEALER_BUST:
                     Console.Clear();
-                    ConsoleWritter.WriteInGreen("Dealer BUST!");
+                    ConsoleWritter.Write("Dealer BUST!", ConsoleColor.Green);
                     break;
                 case GameStatus.PLAYER_WIN:
-                    ConsoleWritter.WriteInGreen("You Won!");
+                    ConsoleWritter.Write("You Won!", ConsoleColor.Green);
                     break;
                 case GameStatus.PLAYER_LOSE:
-                    ConsoleWritter.WriteInRed("You lose!");
+                    ConsoleWritter.Write("You lose!", ConsoleColor.Red);
                     break;
                 case GameStatus.DRAW:
                     Console.Clear();
-                    ConsoleWritter.WriteInYellow("It's a draw");
+                    ConsoleWritter.Write("It's a draw", ConsoleColor.Yellow);
                     break;
                 case GameStatus.END:
                     _showDealersHand();
@@ -61,15 +61,15 @@ namespace Assignment.Views
 
         private void _showRestartText()
         {
-            ConsoleWritter.WriteInGreen("Press 1 to Restart");
-            ConsoleWritter.WriteInRed("Any other key to EXIT");
+            ConsoleWritter.Write("Press 1 to Restart", ConsoleColor.Green);
+            ConsoleWritter.Write("Any other key to EXIT", ConsoleColor.Red);
         }
 
         private void _showHitOrHoldText()
         {
-            ConsoleWritter.WriteInGreen("Press 1 to Hit");
-            ConsoleWritter.WriteInYellow("Press 2 to HOLD");
-            ConsoleWritter.WriteInRed("Any other key to EXIT");
+            ConsoleWritter.Write("Press 1 to Hit", ConsoleColor.Green);
+            ConsoleWritter.Write("Press 2 to HOLD", ConsoleColor.Yellow);
+            ConsoleWritter.Write("Any other key to EXIT", ConsoleColor.Red);
         }
 
         private void _showPlayerHand()

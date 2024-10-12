@@ -12,8 +12,8 @@ namespace Assignment.Views
         protected override void _show()
         {
             _printLogo();
-            ConsoleWritter.WriteInGreen("PRESS 1 TO START NEW GAME");
-            ConsoleWritter.WriteInRed("Press any other key to Exit");
+            ConsoleWritter.Write("PRESS 1 TO START NEW GAME", ConsoleColor.Green);
+            ConsoleWritter.Write("Press any other key to Exit", ConsoleColor.Red);
         }
 
 
@@ -38,7 +38,7 @@ namespace Assignment.Views
 
         private void _printLogo()
         {
-            ConsoleWritter.WriteInYellow(" .----------------.  .----------------. \r\n| .--------------. || .--------------. |\r\n| |    _____     | || |     __       | |\r\n| |   / ___ `.   | || |    /  |      | |\r\n| |  |_/___) |   | || |    `| |      | |\r\n| |   .'____.'   | || |     | |      | |\r\n| |  / /____     | || |    _| |_     | |\r\n| |  |_______|   | || |   |_____|    | |\r\n| |              | || |              | |\r\n| '--------------' || '--------------' |\r\n '----------------'  '----------------' ");
+            ConsoleWritter.Write(" .----------------.  .----------------. \r\n| .--------------. || .--------------. |\r\n| |    _____     | || |     __       | |\r\n| |   / ___ `.   | || |    /  |      | |\r\n| |  |_/___) |   | || |    `| |      | |\r\n| |   .'____.'   | || |     | |      | |\r\n| |  / /____     | || |    _| |_     | |\r\n| |  |_______|   | || |   |_____|    | |\r\n| |              | || |              | |\r\n| '--------------' || '--------------' |\r\n '----------------'  '----------------' ", ConsoleColor.DarkYellow);
         }
     }
 }

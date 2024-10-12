@@ -19,35 +19,16 @@ namespace Assignment.Utils
             Console.WriteLine(separator);
             Console.WriteLine();
         }
-        public static void WriteRegular(string text)
+        public static void Write(string text, ConsoleColor color = ConsoleColor.White)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            _write(text);
-
-        }
-
-        private static void _write(string text)
-        {
+            _switchColor(color);
             Console.WriteLine();
             Console.WriteLine(text);
         }
 
-        public static void WriteInRed(string text)
+        private static void _switchColor(ConsoleColor color)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            _write(text);
-        }
-
-        public static void WriteInYellow(string text)
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            _write(text);
-        }
-
-        public static void WriteInGreen(string text)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            _write(text);
+            Console.ForegroundColor = color;
         }
     }
 }
