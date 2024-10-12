@@ -37,7 +37,13 @@ namespace Assignment.Controllers
                     _checkWin();
                     break;
                 case GameStatus.PLAYER_BUST:
+                    model.Status = GameStatus.PLAYER_LOSE;
+                    break;
                 case GameStatus.DEALER_BUST:
+                    model.Status = GameStatus.PLAYER_WIN;
+                    break;
+                case GameStatus.PLAYER_WIN:
+                case GameStatus.PLAYER_LOSE:
                 case GameStatus.DRAW:
                     model.Status = GameStatus.END;
                     break;
@@ -61,12 +67,12 @@ namespace Assignment.Controllers
             }
             if (playerSum > dealerSum)
             {
-                model.Status = GameStatus.DEALER_BUST;
+                model.Status = GameStatus.PLAYER_WIN;
                 return;
             }
             if (dealerSum > playerSum)
             {
-                model.Status = GameStatus.PLAYER_BUST;
+                model.Status = GameStatus.PLAYER_LOSE;
                 return;
             }
         }

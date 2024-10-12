@@ -18,6 +18,7 @@ namespace Assignment.Views
             var model = (GameModel)_model;
             switch (args.Status)
             {
+                case GameStatus.HOLD:
                 case GameStatus.START:
                     Console.Clear();
                     break;
@@ -30,50 +31,33 @@ namespace Assignment.Views
                     Console.Clear();
                     _showPlayerHand();
                     break;
-                case GameStatus.HOLD:
-                    Console.Clear();
-                    break;
                 case GameStatus.PLAYER_BUST:
                     Console.Clear();
-                    _showPlayerLoseText();
-                    _showDealersHand();
-                    _showPlayerHand();
+                    ConsoleWritter.WriteInRed("You BUST!");
                     break;
                 case GameStatus.DEALER_BUST:
                     Console.Clear();
-                    _showPlayerWinText();
-                    _showDealersHand();
-                    _showPlayerHand();
+                    ConsoleWritter.WriteInGreen("Dealer BUST!");
+                    break;
+                case GameStatus.PLAYER_WIN:
+                    ConsoleWritter.WriteInGreen("You Won!");
+                    break;
+                case GameStatus.PLAYER_LOSE:
+                    ConsoleWritter.WriteInRed("You lose!");
                     break;
                 case GameStatus.DRAW:
                     Console.Clear();
-                    _showDrawText();
-                    _showDealersHand();
-                    _showPlayerHand();
+                    ConsoleWritter.WriteInYellow("It's a draw");
                     break;
                 case GameStatus.END:
+                    _showDealersHand();
+                    _showPlayerHand();
                     _showRestartText();
                     break;
                 case GameStatus.EXIT:
                     break;
             }
         }
-
-        private void _showPlayerWinText()
-        {
-            ConsoleWritter.WriteHeader("Congratulations! YOU WIN!");
-        }
-
-        private void _showPlayerLoseText()
-        {
-            ConsoleWritter.WriteHeader("You Lose");
-        }
-
-        private void _showDrawText()
-        {
-            ConsoleWritter.WriteHeader("It's a draw");
-        }
-
 
         private void _showRestartText()
         {
