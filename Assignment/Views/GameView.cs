@@ -12,7 +12,7 @@ namespace Assignment.Views
             model.OnStatusChange += _handleChangeStatus;
         }
 
-        private void _handleChangeStatus(object sender, GameStatusChangedEventArgs args)
+        private void _handleChangeStatus(object? sender, GameStatusChangedEventArgs args)
         {
             
             var model = (GameModel)_model;
@@ -99,12 +99,12 @@ namespace Assignment.Views
 
         protected override void _show()
         {
-            // throw new NotImplementedException();
+          
         }
 
         protected override void _hide()
         {
-           // throw new NotImplementedException();
+          
         }
     }
 }

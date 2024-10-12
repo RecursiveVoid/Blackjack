@@ -25,7 +25,7 @@ namespace Assignment.Models
             }
         }
 
-        public event EventHandler<ModeTypeChangedEventArgs> OnModeTypeChanged;
+        public event EventHandler<ModeTypeChangedEventArgs>? OnModeTypeChanged;
 
         private void _emitModeTypeChanged()
         {

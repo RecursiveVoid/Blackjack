@@ -9,14 +9,14 @@ namespace Assignment.Controllers
     {
         public override void Start()
         {
-            var menuModel = _model as MenuModel;
+            var menuModel = (MenuModel)_model;
             menuModel.Status = MenuStatus.INIT;
             _handleMenuInput();
  ;        }
 
         private void _handleMenuInput()
         {
-            var menuModel = _model as MenuModel;
+            var menuModel = (MenuModel)_model;
                 var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.D1)
                 {

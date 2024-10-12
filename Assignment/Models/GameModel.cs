@@ -6,10 +6,10 @@ namespace Assignment.Models
     public class GameModel: ModeModel
     {
         public GameModel() {
-            Cards = new List<CardModel>();
-            Deck = new List<CardModel>();
-            PlayersHand = new List<CardModel>();
-            DealersHand = new List<CardModel>();
+            Cards = [];
+            Deck = [];
+            PlayersHand = [];
+            DealersHand = [];
         }
         private int GetCardSum(List<CardModel> cards)
         {
@@ -47,7 +47,7 @@ namespace Assignment.Models
             }
         }
 
-        public event EventHandler<GameStatusChangedEventArgs> OnStatusChange;
+        public event EventHandler<GameStatusChangedEventArgs>? OnStatusChange;
 
         private void _emitStatusChange()
         {

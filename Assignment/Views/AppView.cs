@@ -16,7 +16,7 @@ namespace Assignment.Views
             _model.OnModeTypeChanged += _handlChangeModeType;
         }
 
-        private void _handlChangeModeType(object sender, ModeTypeChangedEventArgs args)
+        private void _handlChangeModeType(object? sender, ModeTypeChangedEventArgs args)
         {
            Console.Clear();
         }

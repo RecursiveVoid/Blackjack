@@ -17,7 +17,7 @@ namespace Assignment.Views
         }
 
 
-        private void _handleChangeStatus(object sender, MenuStatusChangedEventArgs args)
+        private void _handleChangeStatus(object? sender, MenuStatusChangedEventArgs args)
         {
            switch(args.Status)
             {

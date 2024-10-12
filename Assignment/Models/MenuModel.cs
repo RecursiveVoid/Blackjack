@@ -18,7 +18,7 @@ namespace Assignment.Models
             }
         }
 
-        public event EventHandler<MenuStatusChangedEventArgs> OnStatusChange;
+        public event EventHandler<MenuStatusChangedEventArgs>? OnStatusChange;
 
         private void _emitStatusChanged()
         {

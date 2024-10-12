@@ -16,7 +16,7 @@ namespace Assignment.Controllers
             model.OnStatusChange += _handleChangeStatus;
         }
 
-        private void _handleChangeStatus(object sender, GameStatusChangedEventArgs args) { 
+        private void _handleChangeStatus(object? sender, GameStatusChangedEventArgs args) { 
             var model = (GameModel)_model;
             switch(args.Status)
             {
@@ -106,8 +106,8 @@ namespace Assignment.Controllers
         private void _prepareHands()
         {
             var model = (GameModel)_model;
-            model.PlayersHand = new List<CardModel>();
-            model.DealersHand = new List<CardModel>();
+            model.PlayersHand = [];
+            model.DealersHand = [];
         }
 
 
@@ -145,24 +145,24 @@ namespace Assignment.Controllers
         private void _shuffleDeck()
         {
             var random = new Random();
-            var gameModel = _model as GameModel;
+            var gameModel = (GameModel)_model;
             gameModel.Deck = gameModel.Cards.OrderBy(cardModel => random.Next()).ToList();
         }
 
         private void _dealCardToPlayer() {
-            var gameModel = _model as GameModel;
+            var gameModel = (GameModel)_model;
             _dealCardTo(gameModel.PlayersHand);
         }
 
         private void _dealCardToDealer()
         {
-            var gameModel = _model as GameModel;
+            var gameModel =(GameModel)_model;
             _dealCardTo(gameModel.DealersHand);
         }
 
         private void _dealCardTo(List<CardModel> hand)
         {
-            var gameModel = _model as GameModel;
+            var gameModel = (GameModel)_model;
             var deck = gameModel.Deck;
             var topCard = deck.FirstOrDefault();
             hand.Add(topCard);
@@ -177,7 +177,7 @@ namespace Assignment.Controllers
 
         private void _setStatusToStart()
         {
-            var gameModel = _model as GameModel;
+            var gameModel = (GameModel)_model ;
             gameModel.Status = GameStatus.START;
         }
 
