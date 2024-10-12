@@ -8,14 +8,14 @@ namespace Assignment.Models
     {
         public AppModel()
         {
-            modes = new List<Mode>();
+            Modes = new List<Mode>();
         }
         public Mode CurrentMode { get; set; }
-        public List<Mode> modes { get; set; }
+        public List<Mode> Modes { get; set; }
 
         public Mode GetModeByType(ModeType type)
         {
-            return modes.Find(mode => mode.Type == type);
+            return Modes.Find(mode => mode.Type == type);
         }
 
     }

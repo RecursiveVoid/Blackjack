@@ -19,7 +19,7 @@ namespace Assignment.Views
 
         private void _handleChangeStatus(object sender, MenuStatusChangedEventArgs args)
         {
-           switch(args.status)
+           switch(args.Status)
             {
                 case Types.MenuStatus.INIT:
                     _show();

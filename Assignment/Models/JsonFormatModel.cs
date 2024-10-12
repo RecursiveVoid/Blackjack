@@ -8,7 +8,7 @@
         public string face { get; set; }
         public int value { get; set; }
     }
-    public struct JsonFormat
+    public struct JsonFormatModel
     {
         public List<JsonCardFormat> Card { get; set; }
     }

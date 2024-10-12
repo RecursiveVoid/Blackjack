@@ -18,7 +18,7 @@ namespace Assignment.Controllers
 
         private void _handleChangeStatus(object sender, GameStatusChangedEventArgs args) { 
             var model = (GameModel)_model;
-            switch(args.status)
+            switch(args.Status)
             {
                 case GameStatus.START:
                     _prepareHands();
@@ -52,8 +52,8 @@ namespace Assignment.Controllers
         private void _checkWin()
         {
             var model = (GameModel)_model;
-            var playerSum = model.getPlayerSum();
-            var dealerSum = model.getDealerSum();
+            var playerSum = model.GetPlayerSum();
+            var dealerSum = model.GetDealerSum();
             if (playerSum == dealerSum)
             {
                 model.Status = GameStatus.DRAW;
@@ -75,8 +75,8 @@ namespace Assignment.Controllers
         private void _checkExceeds()
         {
             var model = (GameModel)_model;
-            var playerSum = model.getPlayerSum();
-            var dealerSum = model.getDealerSum();
+            var playerSum = model.GetPlayerSum();
+            var dealerSum = model.GetDealerSum();
             var isPLayerExceedsLimit = playerSum > CARD_VALUE_LIMIT;
             var isDealerExceedsLimit = dealerSum > CARD_VALUE_LIMIT;
             if (isPLayerExceedsLimit && isDealerExceedsLimit)

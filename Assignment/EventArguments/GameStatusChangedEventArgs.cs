@@ -4,6 +4,6 @@ namespace Assignment.EventArguments
 {
     public class GameStatusChangedEventArgs(GameStatus status) : EventArgs
     {
-        public GameStatus status { get; } = status;
+        public GameStatus Status { get; } = status;
     }
 }

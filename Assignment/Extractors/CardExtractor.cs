@@ -22,7 +22,7 @@ namespace Assignment.Extractors
                 return [];
             }
             try {
-                var deserilizedJson = JsonSerializer.Deserialize<JsonFormat>(jsonString);
+                var deserilizedJson = JsonSerializer.Deserialize<JsonFormatModel>(jsonString);
                 if(deserilizedJson.Card == null)
                 {
                     return [];

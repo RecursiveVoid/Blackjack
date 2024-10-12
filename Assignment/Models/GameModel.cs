@@ -11,19 +11,19 @@ namespace Assignment.Models
             PlayersHand = new List<CardModel>();
             DealersHand = new List<CardModel>();
         }
-        private int getCardSum(List<CardModel> cards)
+        private int GetCardSum(List<CardModel> cards)
         {
             return cards.Sum(cardModel => cardModel.Value);
         }
 
-        public int getPlayerSum()
+        public int GetPlayerSum()
         {
-            return getCardSum(PlayersHand);
+            return GetCardSum(PlayersHand);
         }
 
-        public int getDealerSum()
+        public int GetDealerSum()
         {
-            return getCardSum(DealersHand);
+            return GetCardSum(DealersHand);
         }
 
         public List<CardModel> Cards;

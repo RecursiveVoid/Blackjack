@@ -16,7 +16,7 @@ namespace Assignment.Views
         {
             
             var model = (GameModel)_model;
-            switch (args.status)
+            switch (args.Status)
             {
                 case GameStatus.START:
                     Console.Clear();

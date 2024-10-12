@@ -30,7 +30,7 @@ namespace Assignment.Controllers
         {
             var currentMode = _model.CurrentMode;
             currentMode.Controller.Stop();
-            currentMode = _model.GetModeByType(args.type);
+            currentMode = _model.GetModeByType(args.Type);
             _model.CurrentMode = currentMode;
             currentMode.Controller.Start();
         } 
@@ -44,7 +44,7 @@ namespace Assignment.Controllers
 
         private void _handleChangeMenuStatus(object sender, MenuStatusChangedEventArgs args)
         {
-            switch (args.status)
+            switch (args.Status)
             {
                 case MenuStatus.NEW_GAME:
                     _setModeTypeToGame();
@@ -69,8 +69,8 @@ namespace Assignment.Controllers
 
         private void _handleChangeGameStatus(object sender, GameStatusChangedEventArgs args)
         {
-            Console.WriteLine($"game status changed to: {args.status}"); // Debug log
-            switch (args.status)
+            Console.WriteLine($"game status changed to: {args.Status}"); // Debug log
+            switch (args.Status)
             {
                 case GameStatus.END:
                     _setModeTypeToMenu();
@@ -94,8 +94,8 @@ namespace Assignment.Controllers
         private void _prepareModes() {
             var factory = new ModeFactory();
             var menuMode = factory.CreateMenuMode();
-            _model.modes.Add(factory.CreateGameMode());
-            _model.modes.Add(menuMode);
+            _model.Modes.Add(factory.CreateGameMode());
+            _model.Modes.Add(menuMode);
             _model.CurrentMode = menuMode;
         }
     }
