@@ -6,6 +6,7 @@ namespace Assignment.Models
     public class GameModel: ModeModel
     {
         public GameModel() {
+            _status = GameStatus.INIT;
             Cards = [];
             Deck = [];
             PlayersHand = [];
@@ -34,7 +35,7 @@ namespace Assignment.Models
 
         public List<CardModel> DealersHand;
 
-        private GameStatus _status = GameStatus.INIT;
+        private GameStatus _status;
 
         public GameStatus Status
         {
