@@ -71,11 +71,8 @@ namespace Assignment.Controllers
         {
             switch (args.Status)
             {
-                case GameStatus.END:
-                    _setModeTypeToMenu();
-                    break;
                 case GameStatus.EXIT:
-                    _exitGracefully();
+                    _setModeTypeToMenu();
                     break;
             }
         }

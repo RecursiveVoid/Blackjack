@@ -71,14 +71,14 @@ namespace Assignment.Views
         private void _showRestartText()
         {
             ConsoleWritter.Write("Press 1 to Restart", ConsoleColor.Green);
-            ConsoleWritter.Write("Any other key to EXIT", ConsoleColor.Red);
+            ConsoleWritter.Write("Any other key to return to Menu", ConsoleColor.Red);
         }
 
         private void _showHitOrHoldText()
         {
             ConsoleWritter.Write("Press 1 to Hit", ConsoleColor.Green);
             ConsoleWritter.Write("Press 2 to HOLD", ConsoleColor.Yellow);
-            ConsoleWritter.Write("Any other key to EXIT", ConsoleColor.Red);
+            ConsoleWritter.Write("Any other key to return to Menu", ConsoleColor.Red);
         }
 
         private void _showPlayerHand()
